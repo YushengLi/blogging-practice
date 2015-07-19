@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get    'sign_in'  => 'sessions#new'
+  post   'sign_in'  => 'sessions#create'
+  delete 'sign_out' => 'sessions#destroy'
+
   resources :tags
-
   resources :posts
-
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -10,5 +10,11 @@
   <%= @user.email %>
 </p>
 
+<ul>
+  <% @user.posts.each do |post| %>
+  <li><%= link_to post.title, post %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
